@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết Quả Quiz</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+</head>
+<body>
+    <h1>Kết Quả Quiz</h1>
+    <p>Điểm của bạn: {{ score }} / {{ total_questions }}</p>
+    <p>Tài liệu tham khảo thêm: {{ chat_response }}</p>
+
+    <a href="{{ url_for('reading') }}">Làm lại quiz</a>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lý Thuyết</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Search Box */
+        .search-box {
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .search-box input {
+            border: none;
+            background: none;
+            outline: none;
+            width: 100%;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4358a0;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Khoảng cách giữa "Đăng xuất" và biểu tượng */
+        }
+        /* User Icon */
+        .user-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Main Content */
+        .main-content {
+            background-color: #e3f6f5;
+            padding: 40px 20px;
+            min-height: calc(100vh - 80px); /* Adjusted for header height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-wrapper {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .content-wrapper h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #4358a0;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        /* Exercise Button */
+        .btn-exercise-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn-exercise {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center; /* Căn giữa nút */
+            margin-top: 20px; /* Tạo khoảng cách phía trên nút */
+        }
+
+        .btn-exercise:hover {
+            background-color: #005f73;
+        }
+        .btn-logout {
+            background-color: #FF0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .search-box {
+                width: 150px;
+            }
+
+            .pdf-viewer {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .main-content {
+                padding: 20px 10px;
+            }
+
+            .content-wrapper {
+                padding: 15px;
+            }
+
+            .pdf-viewer {
+                height: 300px;
+            }
+        }
+    .pdf-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    iframe {
+        width: 110vw; /* Chiếm 90% chiều rộng của màn hình */
+        height: 110vh; /* Chiếm 90% chiều cao của màn hình */
+        border: none; /* Bỏ viền */
+    }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm">
+    </div>
+    <div class="nav-links">
+        <a href="/account">Trang chủ</a>
+        <a href="#">Dashboard</a>
+    </div>
+    <div class="user-actions">
+        <a href="{{ url_for('logout') }}">Đăng xuất</a>
+        <span class="user-icon">👤</span>
+    </div>
+</header>
+
+<div class="main-content">
+    <form method="post">
+        <div class="content-wrapper">
+            <h1>{{ tai_lieu["Subject"] }}</h1>
+
+            <div class="pdf-container">
+                <iframe src="{{ url_for('static', filename=tai_lieu['Doc']) }}" allowfullscreen></iframe>
+            </div>
+            <div class="button-container">
+                <button class="btn-exercise" type="submit" name="button_action" value="activated" >Chuyển sang làm bài tập</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

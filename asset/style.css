@@ -1,0 +1,351 @@
+*{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+   font-size: 1.6 rem;
+}
+
+a {
+  text-decoration : none; 
+}
+
+.main-content {
+  width: 1800px;
+  max-width: calc(100% - 48px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header .body {
+  margin-top: 20px;
+  display: flex;
+}
+
+.nav {
+  margin-left: 500px;
+  margin-right: auto;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav a {
+  color: #000;
+  font-family: "Space Grotesk";
+  font-size: 14px;
+  font-style: normal;
+  padding: 8px 14.5px;
+}
+
+.nav a:hover {
+  text-shadow: 1px 0 0 currentColor;
+}
+
+.logo-container {
+  display: flex;
+  align-items: right;
+  gap: 10px;
+}
+
+.samsung-logo {
+  order: 1;
+}
+
+.university-logo {
+  order: 2;
+}
+
+
+.hero{
+  padding: 135px 0;
+}
+
+.hero h1{
+  text-align: center;
+  font-family: "Nunito";
+  font-size: 60px;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  background: linear-gradient(90deg, #FF3BFF 0%, #ECBFBF 38.02%, #5C24FF 75.83%, #D94FD5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+  text-align: center;
+  color: #000;
+  font-family: "Nunito";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.6px;
+}
+
+.hero p {
+  color: #000;
+  text-align: center;
+  font-family: "Work Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 33px; /* 165% */
+  letter-spacing: 0.72px;
+}
+
+.hero .startbtn {
+  display: flex;
+  justify-content: center;
+  gap: 10px
+}
+
+
+.btn {
+  display: inline-flex;
+  height: auto; /* Allow the button height to adjust naturally */
+  padding: 10px 32px; /* Adjust padding for a more typical button size */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  border: 2px solid #FF3BFF;
+  background: #FFF;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.hero a {
+  color: #000;
+  text-align: center;
+  font-family: Taviraj;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.random-img {
+  margin-top: -120px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.random-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about {
+  padding: 30px 0;
+}
+
+.about h1 {
+  text-align: center;
+  color: #383030;
+  font-family: "Space Grotesk";
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 170px; /* 170% */
+  letter-spacing: -5.1px;
+}
+
+.faqs {
+  /*padding: 1000px 0;*/
+}
+
+.faqs .heading {
+  display: flex;
+  align-items: center;
+  /*gap: 50px;*/
+}
+
+.faqs .border1 {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  border: 4px solid #383030;
+  margin-left: 20px;
+}
+
+.faqs .line1 {
+  width: 1200px;
+  height: 5px;
+  background: #383030;
+}
+
+.faqs .border2 {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  border: 4px solid #383030;
+}
+
+.faqs .heading .title {
+  color: #383030;
+  font-family: Inter;
+  font-size: 79.811px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 114.4px; /* 108.118% */
+  letter-spacing: -3.3px;
+}
+
+.faqs .heading .subtitle {
+  color: #383030;
+  font-family: Inter;
+  font-size: 17.25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18.04px;
+  margin: 0;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.faqs .question {
+  /*margin-top: -1000px;*/
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faqs qbox {
+  cursor: pointer; /* Pointer cursor for clickable items */
+  border: 1px solid transparent;
+  /*padding: 32px 41.59px 32px 55px; Padding inside the qbox */
+  /*justify-content: flex-start;  Align items to the start
+  align-items: stretch;  Stretch items to take the full width
+  border-radius: 20px; Rounded corners
+  background: #F6F0E5;Background color 
+  color: #383030;
+  font-family: Inter;
+  font-size: 15.438px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18.04px;  149.504% */
+}
+
+.qbox[open] {
+  border: 1px solid #ccc; /* Change border when open */
+}
+
+summary {
+  padding: 32px 41.59px 32px 55px;
+  outline: none; /* Remove outline for summary */
+  font-weight: bold; /* Make the summary text bold */
+  display: flex; /* Make the summary behave like a flex container */
+  justify-content: space-between; /* Align items */
+  align-items: center; /* Center items vertically */
+  border-radius: 20px 20px 0 0; /* Rounded corners */
+  background: #F6F0E5; /* Background color */
+  color: #383030;
+  font-family: Inter;
+  font-size: 15.438px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18.04px; /* 149.504% */
+  
+}
+
+.answer {
+  padding: 1px 100px; /* Padding for the answer content */
+  margin: 0; /* Remove default margin */
+  /*margin-top: 10px;*/
+  font-weight:300; /* Make the summary text bold */
+  display: flex;
+  justify-content: space-between; /* Align items */
+  align-items: center; /* Center items vertically */
+  border-radius: 0 0 20px 20px;
+  background: #F6F0E5; /* Background color */
+  color: #080808;
+  font-family: Inter;
+  font-size: 14.438px;
+  font-style: normal;
+  line-height: 18.04px; /* 149.504% */
+}
+
+.faqs .footerline1 {
+  margin-top: 100px;
+  width: 101.2%;
+  height: 10px;
+  overflow: hidden;
+  background: #383030;
+}
+
+.footer {
+  padding: 100px;
+}
+
+.footer .main-content {
+  display: flex;
+}
+
+.footer .footq {
+  width: 50%;
+}
+
+.footer .randomsth {
+  position: relative;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footheading {
+  color: #383030;
+  font-family: Inter;
+  font-size: 61.163px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 67.2px; /* 87.771% */
+  letter-spacing: -2.4px;
+  margin-left: -100px;
+}
+
+.footer .subheading {
+  color: #383030;
+  font-family: Inter;
+  font-size: 20.648px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px; /* 121.423% */
+  margin-left: -100px;
+}
+
+.randomsth p {
+  padding: 20px;
+  color: #383030;
+  font-family: Inter;
+  font-size: 61.125px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 80px; /* 102.4% */
+  letter-spacing: -2.4px;
+  margin: 0; /* Remove default margin */
+  position: relative; /* To ensure proper stacking context */
+  z-index: 1; /* Ensure text is above the image */
+  margin-left: 150px; /* Adjust this to move text horizontally */
+  margin-top: 10px; /* Adjust this to move text vertically */
+}
+
+.footer .img {
+  position: absolute;
+  width: 600px; /* Adjust size as needed */
+  height: auto;
+  z-index: -1;
+  top: 10px
+}
+
