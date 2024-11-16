@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template, request, redirect, session, url_for, flash
 import pandas as pd
+import json
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 import time
@@ -131,7 +132,7 @@ def logout():
     flash('Bạn đã đăng xuất.')
     return redirect(url_for('login'))
 
-
+# Tài liệu
 @app.route('/reading', methods=["GET", 'POST'])
 def reading():
     start_time = time.time()
@@ -192,8 +193,8 @@ def quiz():
 def save_per_to_excel(list, difficulty, num):
 
     df = pd.read_excel('ScoreDatabase.xlsx')
-    studytime = list[0]
-    examtime = list[1]
+    studytime = list[0]/60
+    examtime = list[1]/60
     max_user_id = df['id'].max()
     user_id = max_user_id + 1
     user_input = [user_id, difficulty, num, studytime, examtime]
@@ -225,6 +226,10 @@ def load_chat_from_excel(file):
 
 chat = load_chat_from_excel('chatbot.xlsx')
 
+def load_user_id():
+    df = pd.read_excel('ScoreDatabase.xlsx')
+    max_user_id = df['id'].max()
+    return max_user_id
 
 @app.route('/final', methods=["POST", "GET"])
 def final():
@@ -248,6 +253,7 @@ def final():
     save_per_to_excel(all_result, difficulty, score)
     all_result.clear()
     
+    user_id = load_user_id()
     personalize(user_id)
     rate = weak[-1]
     studytype = session.get('studytype')
@@ -259,8 +265,7 @@ def final():
     elif rate == 1:
         chat_response = "Bạn đã làm rất tốt và vượt qua bài kiểm tra"
 
-    return render_template('results.html', score=score, chat_response=chat_response, total_questions=total_questions)
-
+    return render_template('results.html', score=score, chat_response=chat_response, rate=rate, total_questions=total_questions)
 
 if __name__ == "__main__":
     app.run(debug=True)
