@@ -19,8 +19,11 @@
 <body>
     <h1>Kết Quả Quiz</h1>
     <p>Điểm của bạn: {{ score }} / {{ total_questions }}</p>
-    <p>Tài liệu tham khảo thêm: {{ chat_response }}</p>
-
+    {% if rate == 0 %}
+        <p>Tài liệu tham khảo thêm: {{ chat_response }}</p>
+    {% else %}
+        <p>Nhận xét: {{ chat_response }}</p>
+    {% endif %}
     <a href="{{ url_for('reading') }}">Làm lại quiz</a>
 </body>
 </html>

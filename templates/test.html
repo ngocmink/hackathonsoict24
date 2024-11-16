@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lý Thuyết Đạo Hàm Nhiều Biến</title>
+    <!-- MathJax để hỗ trợ hiển thị LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #2C3E50;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .section-content {
+            margin-top: 5px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title"></h1>
+    <div id="content"></div>
+
+    <script>
+        async function fetchData() {
+            try {
+                // Đọc file JSON từ máy chủ hoặc API Flask
+                const response = await fetch('md.json'); 
+                if (!response.ok) {
+                    throw new Error("Network response was not ok " + response.statusText);
+                }
+                const data = await response.json();
+
+                // Hiển thị tiêu đề chính
+                document.getElementById('main-title').textContent = data.title;
+
+                // Hiển thị nội dung lý thuyết và công thức
+                const contentDiv = document.getElementById('content');
+                data.content.forEach(item => {
+                    const sectionDiv = document.createElement('div');
+                    sectionDiv.classList.add('section');
+
+                    const titleElement = document.createElement('div');
+                    titleElement.classList.add('section-title');
+                    titleElement.textContent = item.title;
+                    sectionDiv.appendChild(titleElement);
+
+                    const contentElement = document.createElement('div');
+                    contentElement.classList.add('section-content');
+                    contentElement.innerHTML = item.content;
+                    sectionDiv.appendChild(contentElement);
+
+                    contentDiv.appendChild(sectionDiv);
+                });
+
+                // Gọi MathJax để render công thức LaTeX
+                MathJax.typesetPromise().catch((err) => console.log(err.message));
+
+            } catch (error) {
+                console.error("Lỗi khi tải JSON:", error);
+            }
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>
