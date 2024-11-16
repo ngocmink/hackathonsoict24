@@ -8,7 +8,6 @@ html{
 
 body{
    font-size: 1.6 rem;
-   margin: 20px auto;
 }
 
 a {
@@ -28,7 +27,7 @@ a {
 }
 
 .nav {
-  margin-left: 200px;
+  margin-left: 500px;
   margin-right: auto;
 }
 
@@ -41,7 +40,7 @@ a {
   font-family: "Space Grotesk";
   font-size: 14px;
   font-style: normal;
-  padding: 3px 10.5px;
+  padding: 8px 14.5px;
 }
 
 .nav a:hover {
@@ -55,24 +54,22 @@ a {
 }
 
 .samsung-logo {
-  width: 70%;
   order: 1;
 }
 
 .university-logo {
-  width: 70%;
   order: 2;
 }
+
 
 .hero{
   padding: 135px 0;
 }
 
-.hero h1 {
+.hero h1{
   text-align: center;
   font-family: "Nunito";
   font-size: 60px;
-  font-weight: 800;
   font-style: normal;
   line-height: normal;
   letter-spacing: 1.6px;
@@ -103,39 +100,28 @@ a {
   line-height: 33px; /* 165% */
   letter-spacing: 0.72px;
 }
-.sub {
+
+.hero .startbtn {
   display: flex;
-  align-items: center; /* Ensures all elements inside are vertically aligned */
-  justify-content: space-between; /* Ensures even spacing between elements */
-  margin-bottom: 10px; /* Adds some spacing between each row */
+  justify-content: center;
+  gap: 10px
 }
 
-.img {
-  margin-right: 10px; /* Adjust as needed for spacing between the circle and text */
-}
-
-p {
-  flex-grow: 1; /* Allows the text to take up remaining space */
-  margin: 0; /* Remove default margins for better alignment */
-}
 
 .btn {
   display: inline-flex;
-  height: 30px; /* Allow the button height to adjust naturally */
-  width: 30px;
+  height: auto; /* Allow the button height to adjust naturally */
   padding: 10px 32px; /* Adjust padding for a more typical button size */
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background: #D9D9D9;
-  color: #000;
-  text-align: center;
-  font-family: "Work Sans";
-  font-size: 18px;
+  border-radius: 100px;
+  border: 2px solid #FF3BFF;
+  background: #FFF;
 }
 
 .btn:hover {
-  background-color: #96d9dd; /* Darker shade on hover */
+  background-color: #0056b3; /* Darker shade on hover */
 }
 
 .hero a {
@@ -152,7 +138,6 @@ p {
   margin-top: -120px;
   width: 100%;
   overflow: hidden;
-  padding-bottom: 100px;
 }
 
 .random-img img {
@@ -161,165 +146,23 @@ p {
   display: block;
 }
 
-.random-img .img1 {
-  filter: blur(1px);
-  opacity: 0.2;
+.about {
+  padding: 30px 0;
 }
 
-.course-selection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.course-selection h1 {
-  color: #000;
+.about h1 {
   text-align: center;
-  font-family: "Inter";
-  font-size: 50px;
+  color: #383030;
+  font-family: "Space Grotesk";
+  font-size: 75px;
   font-style: normal;
   font-weight: 700;
-  line-height: 80px; /* 145.455% */
-  letter-spacing: 0.72px;
+  line-height: 170px; /* 170% */
+  letter-spacing: -5.1px;
 }
 
-.course {
-  display: flex;
-  width: 1400px;
-  height: auto;
-  flex-shrink: 0;
-  background-color: #F5F5F5;
-}
-
-.calculus {
-  display: flex;
-  flex-direction: column;
-  width : 700px;
-  height: auto;
-}
-
-.calculus .img {
-  padding-left: 30px;
-  width: 75%;
-}
-
-.calculus .subject {
-  color: #3747A9;
-  font-family: "Roboto Slab";
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 80px; /* 200% */
-  letter-spacing: 0.72px;
-  padding: 35px;
-  padding-bottom: 0;
-}
-
-.algebra {
-  display: flex;
-  flex-direction: column;
-  width : 700px;
-  height: auto;
-}
-
-.algebra .subject {
-  color: #663AA7;
-  font-family: "Roboto Slab";
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 80px; /* 200% */
-  letter-spacing: 0.72px;
-  padding : 35px;
-  padding-bottom: 0;
-}
-
-.algebra .img {
-  padding-left: 30px;
-  width: 75%;
-}
-
-.sub {
-  display: flex;
-  padding-left: 30px;
-  align-items: center;
-}
-
-.sub .img {
-  width: 80px;
-  height: 80px;
-  padding-right: 25px;
-}
-
-.sub p {
-  color: #6D5E5E;
-  font-family: "Work Sans";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 80px; /* 266.667% */
-  letter-spacing: 0.72px;
-  padding-right: 180px;
-}
-
-.about .img {
-  width: 100%;
-  height: auto;
-  display: block;
-  padding: 70px 0 110px 0;
-}
-
-.plan p {
-  color: #000;
-  text-align: center;
-  font-family: "Inter";
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  letter-spacing: 1.5px;
-  padding-bottom: 50px;
-}
-
-.plan .img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.spaceline .img {
-  padding-top: 200px;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.why {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 140px;
-}
-
-.why p {
-  color: #000;
-  text-align: center;
-  font-family: "Inter";
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-  letter-spacing: 1.5px;
-  padding-bottom: 120px;
-}
-
-.why .img {
-  width: 80%;
-  height: auto;
-  display: block;
-  justify-content: center;
+.faqs {
+  /*padding: 1000px 0;*/
 }
 
 .faqs .heading {
@@ -337,7 +180,7 @@ p {
 }
 
 .faqs .line1 {
-  width: 1000px;
+  width: 1200px;
   height: 5px;
   background: #383030;
 }
@@ -383,10 +226,10 @@ p {
   border: 1px solid transparent;
   /*padding: 32px 41.59px 32px 55px; Padding inside the qbox */
   /*justify-content: flex-start;  Align items to the start
-  align-items: stretch;  Stretch items to take the full width*/
-  border-radius: 20px;
-  background: #D4D5FF;
-  /*color: #383030;
+  align-items: stretch;  Stretch items to take the full width
+  border-radius: 20px; Rounded corners
+  background: #F6F0E5;Background color 
+  color: #383030;
   font-family: Inter;
   font-size: 15.438px;
   font-style: normal;
@@ -406,7 +249,7 @@ summary {
   justify-content: space-between; /* Align items */
   align-items: center; /* Center items vertically */
   border-radius: 20px 20px 0 0; /* Rounded corners */
-  background: #D4D5FF; /* Background color */
+  background: #F6F0E5; /* Background color */
   color: #383030;
   font-family: Inter;
   font-size: 15.438px;
@@ -425,7 +268,7 @@ summary {
   justify-content: space-between; /* Align items */
   align-items: center; /* Center items vertically */
   border-radius: 0 0 20px 20px;
-  background: #D4D5FF; /* Background color */
+  background: #F6F0E5; /* Background color */
   color: #080808;
   font-family: Inter;
   font-size: 14.438px;
@@ -505,11 +348,4 @@ summary {
   z-index: -1;
   top: 10px
 }
-.welcome-message {
-  font-family: "Work Sans", sans-serif;
-  font-size: 18px;
-  color: #000;
-  margin-left: 20px; /* Điều chỉnh khoảng cách bên trái nếu cần */
-}
-
 
